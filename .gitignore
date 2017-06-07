@@ -1,0 +1,16 @@
+####################
+#rails-api-server
+####################
+.bundle
+
+db/*.sqlite3
+db/*.sqlite3-journal
+
+log/*
+tmp/*
+!og/.keep
+!tmp/.keep
+
+.byebug_history
+
+dump.rdb
