@@ -102,3 +102,6 @@ Based on the following tutorials:
 Redis:
 * Config: http://www.victorareba.com/tutorials/speed-your-rails-app-with-model-caching-using-redis
 * General Idea: https://medium.com/wolox-driving-innovation/adding-a-realtime-module-to-your-rails-api-18bb562e6441
+
+Postgres:
+* Basic use: https://www.codementor.io/devops/tutorial/getting-started-postgresql-server-mac-osx

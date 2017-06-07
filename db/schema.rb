@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170430135119) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chat_rooms", force: :cascade do |t|
     t.string   "title"
     t.integer  "sender_id"
@@ -19,10 +22,10 @@ ActiveRecord::Schema.define(version: 20170430135119) do
     t.datetime "updated_at",   null: false
     t.integer  "recipient_id"
     t.integer  "created_id"
-    t.index ["created_id"], name: "index_chat_rooms_on_created_id"
-    t.index ["recipient_id"], name: "index_chat_rooms_on_recipient_id"
-    t.index ["sender_id"], name: "index_chat_rooms_on_sender_id"
-    t.index ["title"], name: "index_chat_rooms_on_title", unique: true
+    t.index ["created_id"], name: "index_chat_rooms_on_created_id", using: :btree
+    t.index ["recipient_id"], name: "index_chat_rooms_on_recipient_id", using: :btree
+    t.index ["sender_id"], name: "index_chat_rooms_on_sender_id", using: :btree
+    t.index ["title"], name: "index_chat_rooms_on_title", unique: true, using: :btree
   end
 
   create_table "messages", force: :cascade do |t|
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20170430135119) do
     t.integer  "chat_room_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,8 +43,8 @@ ActiveRecord::Schema.define(version: 20170430135119) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["name"], name: "index_users_on_name", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
   end
 
 end
