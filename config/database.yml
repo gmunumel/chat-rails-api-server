@@ -24,6 +24,4 @@ test:
 
 production:
   <<: *default
-  database: <%= Rails.application.secrets.database_name %>
-  username: <%= Rails.application.secrets.database_username %>
-  password: <%= Rails.application.secrets.database_password %>
+  url: <%= ENV['DATABASE_URL'] %>
