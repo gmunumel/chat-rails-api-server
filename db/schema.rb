@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20170430135119) do
     t.datetime "updated_at",   null: false
     t.integer  "recipient_id"
     t.integer  "created_id"
-    t.index ["created_id"], name: "index_chat_rooms_on_created_id", using: :btree
-    t.index ["recipient_id"], name: "index_chat_rooms_on_recipient_id", using: :btree
     t.index ["sender_id"], name: "index_chat_rooms_on_sender_id", using: :btree
     t.index ["title"], name: "index_chat_rooms_on_title", unique: true, using: :btree
   end
@@ -47,4 +45,9 @@ ActiveRecord::Schema.define(version: 20170430135119) do
     t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
   end
 
+  add_foreign_key "chat_rooms", "users", column: "created_id", name: "fk_rails_9231ksdasd"
+  add_foreign_key "chat_rooms", "users", column: "recipient_id"
+  add_foreign_key "chat_rooms", "users", column: "sender_id"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
 end
