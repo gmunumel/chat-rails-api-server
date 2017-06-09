@@ -31,8 +31,6 @@ group :development, :test do
   gem 'byebug', platform: [:mri, :mingw, :x64_mingw]
   # make test using rspec
   gem 'rspec-rails'
-  # generate test object
-  gem 'factory_girl_rails', '~> 4.0'
   # provide special matchers for test
   gem 'shoulda-matchers', '~> 3.1'
   # provide fake values
@@ -44,9 +42,10 @@ end
 group :development do
 end
 
+# generate random dummy data
+gem 'factory_girl_rails', '~> 4.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 # Redis to use cache
 gem 'redis'
 # User Redis with namespaces
