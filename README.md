@@ -90,6 +90,9 @@ This is use for asyncronous search of users. In case it doesn't find any user wi
 #### Delete Message
 ```curl -i -X DELETE http://localhost:3000/chat_rooms/1/messages/1``` 
 
+## Live Example
+https://gmunumel-chat-rails-api-server.herokuapp.com
+
 ## License
 
 Licensed under [MIT](../LICENSE.md)
