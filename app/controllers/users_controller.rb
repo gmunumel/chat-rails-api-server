@@ -7,7 +7,7 @@ class UsersController < ActionController::API
   # GET /users
   def index
     ids = user_params[:ids] ? user_params[:ids].split(',').map(&:to_i) : nil
-    @users = ids ? User.find(ids).index_by(&:id).slice(*ids).values : User.all
+    @users = ids ? User.where(id: ids).index_by(&:id).slice(*ids).values : User.all
     json_response(@users)
   end
 

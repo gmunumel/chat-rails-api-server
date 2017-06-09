@@ -26,7 +26,7 @@ RSpec.describe 'Users API', type: :request do
 
     context 'when params ids is defined' do
       # make HTTP get request before each example
-      before { get '/users?ids=1,3,8' }
+      before { get "/users?ids=#{users[1].id},#{users[4].id},#{users[8].id}" }
 
       it 'returns users' do
         # Note `json` is a custom helper to parse JSON responses
