@@ -33,8 +33,6 @@ group :development, :test do
   gem 'rspec-rails'
   # provide special matchers for test
   gem 'shoulda-matchers', '~> 3.1'
-  # provide fake values
-  gem 'faker'
   # clean database
   gem 'database_cleaner'
 end
@@ -42,7 +40,9 @@ end
 group :development do
 end
 
-# generate random dummy data
+# provide fake values
+gem 'faker'
+# generate random object
 gem 'factory_girl_rails', '~> 4.0'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
