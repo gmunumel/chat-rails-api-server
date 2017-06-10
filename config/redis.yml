@@ -10,5 +10,5 @@ test:
 #  namespace: appname_test
 production:
   db: 2
-  host: <%= ENV['REDIS_URL'] %>
+  host: <%= Rails.application.secrets.redis_url %>
 #  namespace: appname_prod
