@@ -9,6 +9,6 @@ test:
   db: 1
 #  namespace: appname_test
 production:
-  db: 2
+  db: 0
   url: ENV['REDIS_URL']
 #  namespace: appname_prod
