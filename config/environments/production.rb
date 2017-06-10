@@ -78,5 +78,4 @@ Rails.application.configure do
 
   # Set secret_key_base key in prod
   config.secret_key_base = ENV['SECRET_KEY_BASE']
-  config.redis_url = ENV['REDIS_URL']
 end
