@@ -4,6 +4,7 @@ This project provide the backend functionality for the chat. It will get request
 from client-side and will generate data in response. Consists in three main parts: Users, 
 Chat Room and Message.  
 
+Part of https://github.com/gmunumel/chat-socketio-rails project
 
 ## Installation
 ```bundle install```
